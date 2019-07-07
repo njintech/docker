@@ -1,4 +1,4 @@
-FROM ubuntu.user.base
+FROM ubuntu:16.04
 
 RUN apt-get update && apt-get install -y git curl && rm -rf /var/lib/apt/lists/*
 
@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y --no-install-recommends --allow-unauthenticated
 	python-numpy python-pip python-dev python-wheel \
 	python3-numpy python3-pip python3-dev python3-wheel \
 	git openjdk-8-jdk \
-	cmake build-essential tzdata
+	cmake build-essential tzdata sudo
 	
 RUN echo "Asia/Seoul" > /etc/timezone
 RUN rm /etc/localtime
